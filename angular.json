@@ -11,31 +11,31 @@
         }
       },
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "my-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/bazel:build",
           "options": {
-            "targetLabel": "//src:prodapp",
+            "targetLabel": "//my-app/src:prodapp",
             "bazelCommand": "build"
           },
           "configurations": {
             "production": {
-              "targetLabel": "//src:prodapp"
+              "targetLabel": "//my-app/src:prodapp"
             }
           }
         },
         "serve": {
           "builder": "@angular/bazel:build",
           "options": {
-            "targetLabel": "//src:devserver",
+            "targetLabel": "//my-app/src:devserver",
             "bazelCommand": "run",
             "watch": true
           },
           "configurations": {
             "production": {
-              "targetLabel": "//src:prodserver"
+              "targetLabel": "//my-app/src:prodserver"
             }
           }
         },
@@ -49,16 +49,16 @@
           "builder": "@angular/bazel:build",
           "options": {
             "bazelCommand": "test",
-            "targetLabel": "//src:test"
+            "targetLabel": "//my-app/src:test"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "my-app/tsconfig.app.json",
+              "my-app/tsconfig.spec.json",
+              "my-app/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -69,11 +69,11 @@
           "builder": "@angular/bazel:build",
           "options": {
             "bazelCommand": "test",
-            "targetLabel": "//e2e:devserver_test"
+            "targetLabel": "//my-app/e2e:devserver_test"
           },
           "configurations": {
             "production": {
-              "targetLabel": "//e2e:prodserver_test"
+              "targetLabel": "//my-app/e2e:prodserver_test"
             }
           }
         }
