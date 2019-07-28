@@ -43,6 +43,7 @@ ng_module(
         "@npm//@angular/core",
         "@npm//@angular/platform-browser",
         "@npm//@angular/router",
+        "@npm//@angular/upgrade",
         "@npm//@types",
         "@npm//rxjs",
     ],
